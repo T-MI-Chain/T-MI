@@ -1,4 +1,4 @@
-# tmi
+# T-MI
 
 Implementation of a https://tmi.network node in Rust based on the Substrate framework.
 
