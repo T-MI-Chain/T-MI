@@ -1,0 +1,27 @@
+[package]
+name = "tmi-node-subsystem-test-helpers"
+version = "0.1.0"
+authors = ["Parity Technologies <admin@parity.io>"]
+edition = "2018"
+description = "Subsystem traits and message definitions"
+
+[dependencies]
+async-trait = "0.1.42"
+futures = "0.3.12"
+futures-timer = "3.0.2"
+tracing = "0.1.22"
+tracing-futures = "0.2.4"
+parity-scale-codec = { version = "2.0.0", default-features = false, features = ["derive"] }
+parking_lot = "0.11.1"
+pin-project = "1.0.4"
+tmi-node-primitives = { path = "../primitives" }
+tmi-node-subsystem = { path = "../subsystem" }
+tmi-node-subsystem-util = { path = "../subsystem-util" }
+tmi-primitives = { path = "../../primitives" }
+tmi-statement-table = { path = "../../statement-table" }
+sc-network = { git = "https://github.com/tmi/substrate", branch = "master" }
+smallvec = "1.6.1"
+sp-core = { git = "https://github.com/tmi/substrate", branch = "master" }
+
+[dev-dependencies]
+tmi-overseer = { path = "../overseer" }

@@ -1,0 +1,31 @@
+[package]
+name = "tmi-test-client"
+version = "0.8.28"
+authors = ["Parity Technologies <admin@parity.io>"]
+edition = "2018"
+
+[dependencies]
+parity-scale-codec = { version = "2.0.0", default-features = false, features = ["derive"] }
+
+# tmi dependencies
+tmi-test-runtime = { path = "../../../runtime/test-runtime" }
+tmi-test-service = { path = "../service" }
+tmi-primitives = { path = "../../../primitives" }
+tmi-node-subsystem = { path = "../../subsystem" }
+
+# Substrate dependencies
+substrate-test-client = { git = "https://github.com/tmi/substrate", branch = "master" }
+sc-service = { git = "https://github.com/tmi/substrate", branch = "master" }
+sc-block-builder = { git = "https://github.com/tmi/substrate", branch = "master" }
+sc-consensus = { git = "https://github.com/tmi/substrate", branch = "master" }
+sp-blockchain = { git = "https://github.com/tmi/substrate", branch = "master" }
+sp-runtime = { git = "https://github.com/tmi/substrate", branch = "master" }
+sp-inherents = { git = "https://github.com/tmi/substrate", branch = "master" }
+sp-core = { git = "https://github.com/tmi/substrate", branch = "master" }
+sp-api = { git = "https://github.com/tmi/substrate", branch = "master" }
+sp-timestamp = { git = "https://github.com/tmi/substrate", branch = "master" }
+sp-consensus = { git = "https://github.com/tmi/substrate", branch = "master" }
+sp-state-machine = { git = "https://github.com/tmi/substrate", branch = "master" }
+
+[dev-dependencies]
+sp-keyring = { git = "https://github.com/tmi/substrate", branch = "master" }

@@ -1,0 +1,28 @@
+[package]
+name = "tmi-statement-distribution"
+version = "0.1.0"
+authors = ["Parity Technologies <admin@parity.io>"]
+description = "Statement Distribution Subsystem"
+edition = "2018"
+
+[dependencies]
+futures = "0.3.12"
+tracing = "0.1.22"
+tracing-futures = "0.2.4"
+tmi-primitives = { path = "../../../primitives" }
+node-primitives = { package = "tmi-node-primitives", path = "../../primitives" }
+sp-staking = { git = "https://github.com/tmi/substrate", branch = "master", default-features = false }
+tmi-subsystem = { package = "tmi-node-subsystem", path = "../../subsystem" }
+tmi-node-subsystem-util = { path = "../../subsystem-util" }
+tmi-node-network-protocol = { path = "../../network/protocol" }
+arrayvec = "0.5.2"
+indexmap = "1.6.1"
+
+[dev-dependencies]
+tmi-node-subsystem-test-helpers = { path = "../../subsystem-test-helpers" }
+assert_matches = "1.4.0"
+sp-keyring = { git = "https://github.com/tmi/substrate", branch = "master" }
+sp-core = { git = "https://github.com/tmi/substrate", branch = "master" }
+sp-application-crypto = { git = "https://github.com/tmi/substrate", branch = "master" }
+sp-keystore = { git = "https://github.com/tmi/substrate", branch = "master" }
+sc-keystore = { git = "https://github.com/tmi/substrate", branch = "master" }

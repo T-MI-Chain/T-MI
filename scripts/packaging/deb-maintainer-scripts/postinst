@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -e
+
+action="$1"
+config_file="/etc/default/tmi"
+
+if [ "$action" = "configure" ]; then
+  # Make user and group
+  getent group tmi >/dev/null 2>&1 || addgroup --system tmi
+  getent passwd tmi >/dev/null 2>&1 ||
+    adduser --system --home /home/tmi --disabled-password \
+    --ingroup tmi tmi
+  if [ ! -e "$config_file" ]; then
+    echo 'tmi_CLI_ARGS=""' > /etc/default/tmi
+  fi
+fi

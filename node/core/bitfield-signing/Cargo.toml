@@ -1,0 +1,16 @@
+[package]
+name = "tmi-node-core-bitfield-signing"
+version = "0.1.0"
+authors = ["Parity Technologies <admin@parity.io>"]
+edition = "2018"
+
+[dependencies]
+futures = "0.3.12"
+tracing = "0.1.22"
+tracing-futures = "0.2.4"
+tmi-primitives = { path = "../../../primitives" }
+tmi-node-subsystem = { path = "../../subsystem" }
+tmi-node-subsystem-util = { path = "../../subsystem-util" }
+sp-keystore = { git = "https://github.com/tmi/substrate", branch = "master" }
+wasm-timer = "0.2.5"
+thiserror = "1.0.23"

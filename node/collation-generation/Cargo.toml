@@ -1,0 +1,20 @@
+[package]
+name = "tmi-node-collation-generation"
+version = "0.1.0"
+authors = ["Parity Technologies <admin@parity.io>"]
+edition = "2018"
+
+[dependencies]
+futures = "0.3.12"
+tracing = "0.1.22"
+tracing-futures = "0.2.4"
+tmi-erasure-coding = { path = "../../erasure-coding" }
+tmi-node-primitives = { path = "../primitives" }
+tmi-node-subsystem = { path = "../subsystem" }
+tmi-node-subsystem-util = { path = "../subsystem-util" }
+tmi-primitives = { path = "../../primitives" }
+sp-core = { git = "https://github.com/tmi/substrate", branch = "master" }
+thiserror = "1.0.23"
+
+[dev-dependencies]
+tmi-node-subsystem-test-helpers = { path = "../subsystem-test-helpers" }

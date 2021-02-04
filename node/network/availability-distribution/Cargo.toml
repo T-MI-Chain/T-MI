@@ -1,0 +1,29 @@
+[package]
+name = "tmi-availability-distribution"
+version = "0.1.0"
+authors = ["Parity Technologies <admin@parity.io>"]
+edition = "2018"
+
+[dependencies]
+futures = "0.3.12"
+tracing = "0.1.22"
+tracing-futures = "0.2.4"
+parity-scale-codec = { version = "2.0.0", features = ["std"]  }
+tmi-primitives = { path = "../../../primitives" }
+tmi-erasure-coding = { path = "../../../erasure-coding" }
+tmi-subsystem = { package = "tmi-node-subsystem", path = "../../subsystem" }
+tmi-node-network-protocol = { path = "../../network/protocol" }
+tmi-node-subsystem-util = { path = "../../subsystem-util" }
+sp-core = { git = "https://github.com/tmi/substrate", branch = "master", features = ["std"]  }
+sp-keystore = { git = "https://github.com/tmi/substrate", branch = "master" }
+thiserror = "1.0.23"
+
+[dev-dependencies]
+tmi-subsystem-testhelpers = { package = "tmi-node-subsystem-test-helpers", path = "../../subsystem-test-helpers" }
+sp-core = { git = "https://github.com/tmi/substrate", branch = "master", features = ["std"] }
+sp-application-crypto = { git = "https://github.com/tmi/substrate", branch = "master" }
+sp-keyring = { git = "https://github.com/tmi/substrate", branch = "master" }
+sp-tracing = { git = "https://github.com/tmi/substrate", branch = "master" }
+sc-keystore = { git = "https://github.com/tmi/substrate", branch = "master" }
+assert_matches = "1.4.0"
+maplit = "1.0"

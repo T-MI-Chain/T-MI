@@ -1,0 +1,12 @@
+name: tmi
+version: 0.2
+appVersion: 0.2.0
+description: tmi Node Implementation
+home: https://tmi.network/
+icon: https://tmi.network/favicon.ico
+sources:
+  - https://github.com/tmi/tmi/
+maintainers:
+  - name: tmi Devops Team
+    email: devops-team@parity.io
+tillerVersion: ">=2.8.0"

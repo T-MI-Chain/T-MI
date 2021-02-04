@@ -1,0 +1,19 @@
+[package]
+name = "tmi-node-network-protocol"
+version = "0.1.0"
+authors = ["Parity Technologies <admin@parity.io>"]
+edition = "2018"
+description = "Primitives types for the Node-side"
+
+[dependencies]
+tmi-primitives = { path = "../../../primitives" }
+tmi-node-primitives = { path = "../../primitives" }
+tmi-node-jaeger = { path = "../../jaeger" }
+parity-scale-codec = { version = "2.0.0", default-features = false, features = ["derive"] }
+sc-network = { git = "https://github.com/tmi/substrate", branch = "master" }
+strum = { version = "0.20", features = ["derive"] }
+thiserror = "1.0.23"
+futures = "0.3.12"
+
+[target.'cfg(not(target_os = "unknown"))'.dependencies]
+zstd = "0.5.0"

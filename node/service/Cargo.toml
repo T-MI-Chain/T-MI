@@ -1,0 +1,135 @@
+[package]
+name = "tmi-service"
+version = "0.8.3"
+authors = ["Parity Technologies <admin@parity.io>"]
+edition = "2018"
+
+[dependencies]
+# Substrate Client
+sc-authority-discovery = { git = "https://github.com/tmi/substrate", branch = "master" }
+babe = { package = "sc-consensus-babe", git = "https://github.com/tmi/substrate", branch = "master" }
+grandpa = { package = "sc-finality-grandpa", git = "https://github.com/tmi/substrate", branch = "master" }
+sc-block-builder = { git = "https://github.com/tmi/substrate", branch = "master" }
+sc-chain-spec = { git = "https://github.com/tmi/substrate", branch = "master" }
+sc-client-api = { git = "https://github.com/tmi/substrate", branch = "master" }
+sc-client-db = { git = "https://github.com/tmi/substrate", branch = "master" }
+sc-consensus = { git = "https://github.com/tmi/substrate", branch = "master" }
+sc-consensus-slots = { git = "https://github.com/tmi/substrate", branch = "master" }
+sc-executor = { git = "https://github.com/tmi/substrate", branch = "master" }
+sc-finality-grandpa-warp-sync = { git = "https://github.com/tmi/substrate", branch = "master", optional = true }
+sc-network = { git = "https://github.com/tmi/substrate", branch = "master" }
+sc-transaction-pool = { git = "https://github.com/tmi/substrate", branch = "master" }
+service = { package = "sc-service", git = "https://github.com/tmi/substrate", branch = "master", default-features = false }
+telemetry = { package = "sc-telemetry", git = "https://github.com/tmi/substrate", branch = "master" }
+
+# Substrate Primitives
+sp-authority-discovery = { git = "https://github.com/tmi/substrate", branch = "master" }
+babe-primitives = { package = "sp-consensus-babe", git = "https://github.com/tmi/substrate", branch = "master" }
+consensus_common = { package = "sp-consensus", git = "https://github.com/tmi/substrate", branch = "master" }
+grandpa_primitives = { package = "sp-finality-grandpa", git = "https://github.com/tmi/substrate", branch = "master" }
+inherents = { package = "sp-inherents", git = "https://github.com/tmi/substrate", branch = "master" }
+sp-api = { git = "https://github.com/tmi/substrate", branch = "master" }
+sp-block-builder = { git = "https://github.com/tmi/substrate", branch = "master" }
+sp-blockchain = { git = "https://github.com/tmi/substrate", branch = "master" }
+sp-core = { git = "https://github.com/tmi/substrate", branch = "master" }
+sp-io = { git = "https://github.com/tmi/substrate", branch = "master" }
+sp-keystore = { git = "https://github.com/tmi/substrate", branch = "master" }
+sp-offchain = { package = "sp-offchain", git = "https://github.com/tmi/substrate", branch = "master" }
+sp-runtime = { git = "https://github.com/tmi/substrate", branch = "master" }
+sp-session = { git = "https://github.com/tmi/substrate", branch = "master" }
+sp-storage = { git = "https://github.com/tmi/substrate", branch = "master" }
+sp-transaction-pool = { git = "https://github.com/tmi/substrate", branch = "master" }
+sp-trie = { git = "https://github.com/tmi/substrate", branch = "master" }
+sp-state-machine = { git = "https://github.com/tmi/substrate", branch = "master" }
+
+# Substrate Pallets
+pallet-babe = { git = "https://github.com/tmi/substrate", branch = "master" }
+pallet-im-online = { git = "https://github.com/tmi/substrate", branch = "master" }
+pallet-staking = { git = "https://github.com/tmi/substrate", branch = "master" }
+pallet-transaction-payment-rpc-runtime-api = { git = "https://github.com/tmi/substrate", branch = "master" }
+
+# Substrate Other
+frame-benchmarking = { git = "https://github.com/tmi/substrate", branch = "master" }
+frame-system-rpc-runtime-api = { git = "https://github.com/tmi/substrate", branch = "master" }
+prometheus-endpoint = { package = "substrate-prometheus-endpoint", git = "https://github.com/tmi/substrate", branch = "master" }
+
+# External Crates
+futures = "0.3.12"
+hex-literal = "0.3.1"
+tracing = "0.1.22"
+tracing-futures = "0.2.4"
+serde = { version = "1.0.123", features = ["derive"] }
+thiserror = "1.0.23"
+
+# tmi
+tmi-node-core-proposer = { path = "../core/proposer" }
+tmi-overseer = { path = "../overseer" }
+tmi-parachain = { path = "../../parachain" }
+tmi-primitives = { path = "../../primitives" }
+tmi-rpc = { path = "../../rpc" }
+tmi-subsystem = { package = "tmi-node-subsystem", path = "../subsystem" }
+tmi-node-subsystem-util = { path = "../subsystem-util" }
+tmi-runtime-parachains = { path = "../../runtime/parachains" }
+
+# tmi Runtimes
+tmi-runtime = { path = "../../runtime/tmi" }
+kusama-runtime = { path = "../../runtime/kusama" }
+westend-runtime = { path = "../../runtime/westend" }
+rococo-runtime = { path = "../../runtime/rococo" }
+
+# tmi Subsystems
+tmi-availability-bitfield-distribution = { path = "../network/bitfield-distribution", optional = true }
+tmi-availability-distribution = { path = "../network/availability-distribution", optional = true }
+tmi-availability-recovery = { path = "../network/availability-recovery", optional = true }
+tmi-collator-protocol = { path = "../network/collator-protocol", optional = true }
+tmi-network-bridge = { path = "../network/bridge", optional = true }
+tmi-node-collation-generation = { path = "../collation-generation", optional = true }
+tmi-node-core-av-store = { path = "../core/av-store", optional = true }
+tmi-node-core-backing = { path = "../core/backing", optional = true }
+tmi-node-core-bitfield-signing = { path = "../core/bitfield-signing", optional = true }
+tmi-node-core-candidate-selection = { path = "../core/candidate-selection", optional = true }
+tmi-node-core-candidate-validation = { path = "../core/candidate-validation", optional = true }
+tmi-node-core-chain-api = { path = "../core/chain-api", optional = true }
+tmi-node-core-provisioner = { path = "../core/provisioner", optional = true }
+tmi-node-core-runtime-api = { path = "../core/runtime-api", optional = true }
+tmi-pov-distribution = { path = "../network/pov-distribution", optional = true }
+tmi-statement-distribution = { path = "../network/statement-distribution", optional = true }
+tmi-approval-distribution = { path = "../network/approval-distribution", optional = true }
+
+[dev-dependencies]
+tmi-test-client = { path = "../test/client" }
+env_logger = "0.8.2"
+
+[features]
+default = ["db", "full-node"]
+db = ["service/db"]
+full-node = [
+	"tmi-node-core-av-store",
+	"sc-finality-grandpa-warp-sync"
+]
+
+runtime-benchmarks = [
+	"tmi-runtime/runtime-benchmarks",
+	"kusama-runtime/runtime-benchmarks",
+	"westend-runtime/runtime-benchmarks",
+	"rococo-runtime/runtime-benchmarks"
+]
+
+real-overseer = [
+	"tmi-availability-bitfield-distribution",
+	"tmi-availability-distribution",
+	"tmi-availability-recovery",
+	"tmi-collator-protocol",
+	"tmi-network-bridge",
+	"tmi-node-collation-generation",
+	"tmi-node-core-backing",
+	"tmi-node-core-bitfield-signing",
+	"tmi-node-core-candidate-selection",
+	"tmi-node-core-candidate-validation",
+	"tmi-node-core-chain-api",
+	"tmi-node-core-provisioner",
+	"tmi-node-core-runtime-api",
+	"tmi-pov-distribution",
+	"tmi-statement-distribution",
+	"tmi-approval-distribution",
+]
